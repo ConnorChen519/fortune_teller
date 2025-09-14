@@ -1,0 +1,2 @@
+# fortune_teller
+coding
