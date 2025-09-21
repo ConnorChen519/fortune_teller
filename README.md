@@ -1,3 +1,3 @@
-# fortune_teller
-coding
-## I modified this :D
+# This is the new README WE MADE!
+
+## :)
