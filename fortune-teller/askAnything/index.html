@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ask Me Anything</title>
+    <link rel="stylesheet" href="/src/style.css">
+  </head>
+  <body>
+    <a class="button-pill back" href="/">← Back</a>
+    <div class="wrapper">
+      <h1>Ask me anything you want…</h1>
+      <div class="icon" id="answerIcon"></div>
+      <div class="input-line">
+        <input id="q" type="text" placeholder="Ask me anything you want…" />
+        <button id="askBtn">Ask</button>
+      </div>
+      <div class="note">Depending on the response, the image tint changes. Answers are random: “yes”, “no”, “maybe”, “if the spirits permit”.</div>
+      <div id="reply" class="fortune"></div>
+    </div>
+    <script type="module" src="/src/ask.js"></script>
+  </body>
+</html>

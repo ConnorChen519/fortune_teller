@@ -2,12 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Fortune Teller</title>
+    <link rel="stylesheet" href="/src/style.css">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="wrapper">
+      <h1>Fortune Teller</h1>
+      <div class="sub">choose what you want…</div>
+      <div class="icon"></div>
+      <div class="row">
+        <a class="button-pill" href="/dailyfortune/">Fortune of the day</a>
+        <a class="button-pill" href="/askAnything/">Ask me anything</a>
+      </div>
+    </div>
+    <script type="module" src="/src/home.js"></script>
   </body>
 </html>

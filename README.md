@@ -3,14 +3,16 @@
 ## :)
 ## codestructure:
 ```
-- .gitignore
-- index.html
-- package.json
-- public/
-    - vite.svg
-- src/
-    - counter.js
-    - javascript.svg
-    - main.js
-    - style.css
+fortune_teller/
+├── index.html
+├── dailyfortune/index.html
+├── askAnything/index.html
+├── package.json
+├── public/
+│   └── images/ (put any bg/icons you want)
+└── src/
+    ├── style.css
+    ├── home.js
+    ├── daily.js
+    └── ask.js
 ```
