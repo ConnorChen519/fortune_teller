@@ -73,19 +73,24 @@ const iconEl = document.getElementById("moodIcon");
 const seedInfo = document.getElementById("seedInfo");
 const rollBtn = document.getElementById("roll");
 
+fortuneEl.style.display = "none";
+seedInfo.style.display = "none";
+
 function renderFortune() {
+  console.log('clicked')
   const seed = dailySeed();
   const rng = mulberry32(hashToInt(seed));
   const r = rng();
   const [bucket, text] = pickFortune(r);
   fortuneEl.textContent = text;
   seedInfo.textContent = `Daily seed: ${seed}`;
-  // change the icon background shade by bucket
-  const shades = { awful:"#8b0000", bad:"#b22222", meh:"#444", good:"#2e8b57", great:"#006400" };
-  iconEl.style.background = shades[bucket];
+  fortuneEl.style.display = "block";
+  fortuneEl.style.color = 'black'
+  fortuneEl.style.background = '#fbf6cf'
+  seedInfo.style.display = "block";
+
+//   const shades = { awful:"#8b0000", bad:"#b22222", meh:"#444", good:"#2e8b57", great:"#006400" };
+//   iconEl.style.background = shades[bucket];
 }
 
 rollBtn.addEventListener("click", renderFortune);
-
-// auto-generate on load
-renderFortune();

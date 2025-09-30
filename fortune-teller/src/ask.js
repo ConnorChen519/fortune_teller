@@ -23,8 +23,11 @@ function pick() {
 function answer() {
   const a = pick();
   reply.textContent = a.text;
-  icon.style.background = moodColor[a.mood];
+  reply.style.background = '#fbf6cf'
+  reply.style.color = 'black'
+//   icon.style.background = moodColor[a.mood];
 }
 
 btn.addEventListener("click", answer);
+btn.style.width = '15%'
 q.addEventListener("keydown", (e) => { if (e.key === "Enter") answer(); });
