@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
 :root {
   --bg: #000000;
   --pill: #fbf6cf;
@@ -8,7 +10,7 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; margin: 0; }
 body {
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: 'Cinzel', serif;
   background: var(--bg) url('/images/asset.png') no-repeat center center fixed;
   background-size: 100% auto; /* default: fit width */
   color: rgb(255, 251, 219);
@@ -24,6 +26,7 @@ body {
     background-size: auto 100%;
   }
 }
+
 
 .wrapper {
   width: min(1100px, 92vw);
@@ -71,6 +74,18 @@ h1 {
 
 .row { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
 
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.button-pill,
+.button-pill:visited,
+.button-pill:active {
+  text-decoration: none;
+}
+
 .button-pill, button {
   background: var(--pill);
   color: var(--dark);
@@ -78,6 +93,7 @@ h1 {
   padding: 14px 22px;
   border-radius: 999px;
   font-weight: 600;
+  font-family: 'Cinzel';
   cursor: pointer;
   box-shadow: 0 4px 0 rgba(0,0,0,0.15);
 }
@@ -100,10 +116,17 @@ input[type="text"] {
 .fortune {
   margin-top: 24px;
   font-size: clamp(20px, 3.5vw, 28px);
-  font-weight: 600;
-  color: #fff;
+  font-weight: 700;
+  color: #fbf6cf;
   text-shadow: 0 2px 2px rgba(0,0,0,0.3);
+
+  /* ✨ Match title highlight */
+  background: rgba(0, 0, 0, 0.35);
+  padding: 8px 16px;
+  border-radius: 10px;
+  display: inline-block;
 }
+
 
 .small { font-size: 13px; opacity: 0.85; color: #111; background: rgba(255,255,255,0.8); padding: 4px 8px; border-radius: 6px; }
 .back { position: fixed; left: 16px; top: 16px; }

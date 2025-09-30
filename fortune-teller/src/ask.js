@@ -21,10 +21,11 @@ function pick() {
 }
 
 function answer() {
-  const a = pick();
-  reply.textContent = a.text;
-  reply.style.background = '#fbf6cf'
-  reply.style.color = 'black'
+    const a = pick();
+    reply.textContent = a.text;
+    reply.style.background = '#fbf6cf'
+    reply.style.color = 'black'
+
 //   icon.style.background = moodColor[a.mood];
 }
 

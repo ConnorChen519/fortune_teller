@@ -46,26 +46,26 @@ function mulberry32(a) {
 }
 
 function hashToInt(str) {
-  let h = 2166136261 >>> 0;
-  for (let i = 0; i < str.length; i++) {
+    let h = 2166136261 >>> 0;
+    for (let i = 0; i < str.length; i++) {
     h ^= str.charCodeAt(i);
     h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
+    }
+    return h >>> 0;
 }
 
 function pickFortune(r) {
-  // map r in [0,1) to buckets (skew however you like)
-  if (r < 0.10) return ["awful", randomFrom(msgBuckets.awful, r)];
-  if (r < 0.30) return ["bad",   randomFrom(msgBuckets.bad, r)];
-  if (r < 0.70) return ["meh",   randomFrom(msgBuckets.meh, r)];
-  if (r < 0.90) return ["good",  randomFrom(msgBuckets.good, r)];
-  return ["great", randomFrom(msgBuckets.great, r)];
+    // map r in [0,1) to buckets (skew however you like)
+    if (r < 0.10) return ["awful", randomFrom(msgBuckets.awful, r)];
+    if (r < 0.30) return ["bad",   randomFrom(msgBuckets.bad, r)];
+    if (r < 0.70) return ["meh",   randomFrom(msgBuckets.meh, r)];
+    if (r < 0.90) return ["good",  randomFrom(msgBuckets.good, r)];
+    return ["great", randomFrom(msgBuckets.great, r)];
 }
 
 function randomFrom(arr, r) {
-  const i = Math.floor(r * 1e6) % arr.length;
-  return arr[i];
+    const i = Math.floor(r * 1e6) % arr.length;
+    return arr[i];
 }
 
 const fortuneEl = document.getElementById("fortune");
@@ -75,19 +75,21 @@ const rollBtn = document.getElementById("roll");
 
 fortuneEl.style.display = "none";
 seedInfo.style.display = "none";
+const overlayBox = document.querySelector('.overlay-box');
+
 
 function renderFortune() {
-  console.log('clicked')
-  const seed = dailySeed();
-  const rng = mulberry32(hashToInt(seed));
-  const r = rng();
-  const [bucket, text] = pickFortune(r);
-  fortuneEl.textContent = text;
-  seedInfo.textContent = `Daily seed: ${seed}`;
-  fortuneEl.style.display = "block";
-  fortuneEl.style.color = 'black'
-  fortuneEl.style.background = '#fbf6cf'
-  seedInfo.style.display = "block";
+    console.log('clicked')
+    const seed = dailySeed();
+    const rng = mulberry32(hashToInt(seed));
+    const r = rng();
+    const [bucket, text] = pickFortune(r);
+    fortuneEl.textContent = text;
+    seedInfo.textContent = `Daily seed: ${seed}`;
+    fortuneEl.style.display = "block";
+    seedInfo.style.display = "block";
+    seedInfo.style.background= 'rgba(0, 0, 0, 0.35)'
+    seedInfo.style.color = 'rgba(158, 158, 158, 1)'
 
 //   const shades = { awful:"#8b0000", bad:"#b22222", meh:"#444", good:"#2e8b57", great:"#006400" };
 //   iconEl.style.background = shades[bucket];
